@@ -1,6 +1,6 @@
 # Keycloak Utils
 
-## import-users.sh - (Administer Keycloak accounts from the command-line)
+## [import-users.sh](./import-users.sh) - Administer Keycloak accounts from the command-line
 See [users.csv](./users.csv) for example format.
 ### Prerequisites in the Keycloak realm:
 1. Create client (eg. keycloak_acct_admin) for this script. Access Type: public.
