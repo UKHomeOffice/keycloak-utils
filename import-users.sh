@@ -167,7 +167,7 @@ unit_test() {
 
 ## Bulk import accounts
 # Reads and creates accounts using a CSV file as the source
-# CSV file format: "first name, last name, username, email, password"
+# CSV file format: "first name,last name,username,email,password,"
 import_accts() {
   kc_login
 
