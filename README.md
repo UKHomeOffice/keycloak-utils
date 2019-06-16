@@ -15,5 +15,5 @@ $ ./import-users.sh --import users.csv
 
 ### Delete users found in csv
 ```sh
-$ ./import-users.sh --import users.csv
+$ ./import-users.sh --delete users.csv
 ```
