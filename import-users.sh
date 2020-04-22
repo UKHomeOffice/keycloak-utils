@@ -67,7 +67,8 @@ kc_create_user() {
     "username": "'"$username"'",
     "email": "'"$email"'",
     "firstName": "'"$firstname"'",
-    "lastName": "'"$lastname"'"
+    "lastName": "'"$lastname"'",
+    "requiredActions":["UPDATE_PASSWORD"]
   }' "$base_url/admin/realms/$realm/users")
 
   # userid=$(echo "$result" | grep -o "Location: .*" | egrep -o '[a-zA-Z0-9]+(-[a-zA-Z0-9]+)+') #parse userid
@@ -99,7 +100,7 @@ kc_lookup_username() {
   --header "Authorization: Bearer $access_token" \
   "$base_url/admin/realms/$realm/users?username=${username}")
 
-  userid=`echo $result | grep -Eo '"id":.*?[^\\]"' | cut -d':'  -f 2 | sed -e 's/"//g'`
+  userid=`echo $result | grep -Eo '"id":.*?[^\\]"' | cut -d':'  -f 2 | sed -e 's/"//g' | cut -d',' -f 1`
   
   msg="$username: lookup "
   process_result "200" "$result" "$msg"
